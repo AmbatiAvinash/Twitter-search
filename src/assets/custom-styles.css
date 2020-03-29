@@ -113,6 +113,18 @@ body{
     margin-right: 2px;
 }
 
+.search h3 {
+    text-align: center;
+    color: blue;
+}
+.search h5 {
+    text-align: center;
+}
+
+.search h5:hover {
+    text-decoration: underline;
+}
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;

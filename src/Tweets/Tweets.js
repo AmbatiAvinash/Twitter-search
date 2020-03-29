@@ -8,6 +8,11 @@ export class Tweets extends Component {
         return (
             <div className="tweets">
                {TwitterData && TwitterData.map(user => (
+                   <>
+                   <div class="active-cyan-3 active-cyan-4 mb-4">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                        <hr />
+                    </div>
                    <div className="tweets-box">
                        <span>
                        <h3>{user.user.name}</h3>
@@ -24,6 +29,7 @@ export class Tweets extends Component {
                        <p className="fa fa-user-circle" style={{paddingLeft: '10px'}}>{user && user.user && user.user.followers_count}</p>
                        </span> 
                    </div>
+                   </>
                ))} 
 
             </div>
