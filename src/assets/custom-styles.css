@@ -123,6 +123,7 @@ body{
 
 .search h5:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .card {

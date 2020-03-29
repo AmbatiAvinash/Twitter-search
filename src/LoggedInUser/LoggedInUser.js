@@ -5,8 +5,8 @@ export const LoggedInUser = () => {
 	return (
 		<div className="user">
             <div className="card">
-                {User && User.map(user => (
-                    <div>
+                {User && User.map((user, key) => (
+                    <div key = {user.id}>
                         <h1>{user.name}</h1>
                         <p>@{user.screen_name}</p>
                         <p>{user.location}</p>

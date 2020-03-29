@@ -4,16 +4,44 @@ import { dateConverter } from '../Reusable/DateConverter';
 
 
 export class Tweets extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            hashtag : [],
+            followRequest: Boolean,
+            following: '',
+            users: [],
+            search: ''
+        }
+    }
+
+
+    searchTweets = (e) => {
+        this.setState({
+            search: e.target.value
+        })
+    }
     render() {
+
+        const userList = TwitterData && TwitterData.filter(
+            (user) => {
+                return user.user.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+            }
+        );
         return (
+            <>
             <div className="tweets">
-               {TwitterData && TwitterData.map(user => (
-                   <>
-                   <div class="active-cyan-3 active-cyan-4 mb-4">
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
-                        <hr />
-                    </div>
-                   <div className="tweets-box">
+            <div className="active-cyan-3 active-cyan-4 mb-4">
+                <input className="form-control" 
+                        type="text"
+                        onChange = {(e) => this.searchTweets(e)}
+                        placeholder="Search with Username"
+                        aria-label="Search" />
+                <hr />
+            </div>
+               {userList && userList.map((user,key)  => (
+                   
+                   <div className="tweets-box" key = {user.id}>
                        <span>
                        <h3>{user.user.name}</h3>
                        <button className={user && user.user && user.user.follow_request_sent === null ? "btn btn-primary btn-sm" : "btn btn-success btn-sm"}>Follow</button>
@@ -29,10 +57,10 @@ export class Tweets extends Component {
                        <p className="fa fa-user-circle" style={{paddingLeft: '10px'}}>{user && user.user && user.user.followers_count}</p>
                        </span> 
                    </div>
-                   </>
                ))} 
 
             </div>
+            </>
         )
     }
 }

@@ -7,7 +7,7 @@ export class Search extends Component {
         const hashtags = entities.map(x => x.hashtags)
         return (
             <div className="search">
-                <h3>Recommondations</h3>
+                <h3>Suggestions</h3>
                 <hr />
                 {
                     hashtags && hashtags.flat().slice(1,10).map(hash => (
