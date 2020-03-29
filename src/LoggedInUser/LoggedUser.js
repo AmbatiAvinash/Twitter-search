@@ -1,0 +1,45 @@
+export const User = [
+     {
+			follow_request_sent: null,
+			profile_use_background_image: true,
+			default_profile_image: false,
+			id: 5402612,
+			verified: true,
+			profile_image_url_https: 'https://pbs.twimg.com/profile_images/460740982498013184/wIPwMwru_normal.png',
+			profile_sidebar_fill_color: 'FFFFFF',
+			profile_text_color: '5A5A5A',
+			followers_count: 22012407,
+			profile_sidebar_border_color: 'FFFFFF',
+			id_str: '5402612',
+			profile_background_color: 'FFFFFF',
+			listed_count: 117990,
+			profile_background_image_url_https:
+				'https://pbs.twimg.com/profile_background_images/459283928017149952/IMgcIyBE.jpeg',
+			utc_offset: 3600,
+			statuses_count: 27972,
+			description:
+				'Breaking news alerts and updates from the BBC. For news, features, analysis follow @BBCWorld (international) or @BBCNews (UK). Latest sport news @BBCSport.',
+			friends_count: 3,
+			location: 'London, UK',
+			profile_link_color: '1F527B',
+			profile_image_url: 'http://pbs.twimg.com/profile_images/460740982498013184/wIPwMwru_normal.png',
+			following: null,
+			geo_enabled: false,
+			profile_banner_url: 'https://pbs.twimg.com/profile_banners/5402612/1398336837',
+			profile_background_image_url:
+				'http://pbs.twimg.com/profile_background_images/459283928017149952/IMgcIyBE.jpeg',
+			name: 'BBC Breaking News',
+			lang: 'en',
+			profile_background_tile: false,
+			favourites_count: 0,
+			screen_name: 'BBCBreaking',
+			notifications: null,
+			url: 'http://www.bbc.co.uk/news',
+			created_at: 'Sun Apr 22 14:42:37 +0000 2007',
+			contributors_enabled: false,
+			time_zone: 'London',
+			protected: false,
+			default_profile: false,
+			is_translator: false
+		}
+];
