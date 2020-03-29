@@ -23,7 +23,7 @@ export const User = [
 			location: 'London, UK',
 			profile_link_color: '1F527B',
 			profile_image_url: 'http://pbs.twimg.com/profile_images/460740982498013184/wIPwMwru_normal.png',
-			following: null,
+			following: false,
 			geo_enabled: false,
 			profile_banner_url: 'https://pbs.twimg.com/profile_banners/5402612/1398336837',
 			profile_background_image_url:

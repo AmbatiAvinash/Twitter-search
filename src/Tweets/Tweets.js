@@ -1,17 +1,31 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { TwitterData } from '../Constants/TwitterData';
 import { dateConverter } from '../Reusable/DateConverter';
 
 
+
+const mapStateToProps = (state) => {
+    return {
+        // following : state.following
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return{
+        // followUser: () => dispatch({type: 'FOLLOW_USER'})
+    }
+
+} 
 export class Tweets extends Component {
+    
     constructor(props){
         super(props);
         this.state = {
             hashtag : [],
-            followRequest: Boolean,
-            following: '',
             users: [],
-            search: ''
+            search: '',
+            data: TwitterData,
+            followingStatus: false
         }
     }
 
@@ -19,6 +33,13 @@ export class Tweets extends Component {
     searchTweets = (e) => {
         this.setState({
             search: e.target.value
+        })
+    }
+
+    followUser = () => {
+
+        this.setState({
+            followingStatus: !this.state.followingStatus
         })
     }
     render() {
@@ -39,12 +60,16 @@ export class Tweets extends Component {
                         aria-label="Search" />
                 <hr />
             </div>
-               {userList && userList.map((user,key)  => (
+               {userList && userList.map((user)  => (
                    
                    <div className="tweets-box" key = {user.id}>
                        <span>
                        <h3>{user.user.name}</h3>
-                       <button className={user && user.user && user.user.follow_request_sent === null ? "btn btn-primary btn-sm" : "btn btn-success btn-sm"}>Follow</button>
+                       <button 
+                            className={"btn btn-primary btn-sm"}
+                            onClick = {() => this.followUser(user.id)}
+                        >{this.state.followingStatus === false ? 'unfollow' : 'follow'}
+                        </button>
                        </span>
                        <h5>@{user.user.screen_name}</h5>
                        <p><strong style={{color: 'darkblue'}}>TWEET: </strong> {user.user.description}</p> 
@@ -65,4 +90,4 @@ export class Tweets extends Component {
     }
 }
 
-export default Tweets
+export default connect(mapStateToProps, mapDispatchToProps)(Tweets);
